@@ -11,13 +11,11 @@ resource "aws_security_group" "this" {
 
   vpc_id = aws_vpc.aws-vpc.id
 
-  dynamic "ingress" {
-    content {
-      from_port   = var.gateway_listen_port
-      to_port     = var.gateway_listen_port
-      protocol    = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
-    }
+  "ingress" {
+    from_port   = var.gateway_listen_port
+    to_port     = var.gateway_listen_port
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
