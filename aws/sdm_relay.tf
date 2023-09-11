@@ -68,5 +68,5 @@ resource "aws_instance" "relay" {
     create_before_destroy = true
   }
 
-  tags = merge({ "Name" = sdm_node.relay.name }, var.tags, )
+  tags = merge({ "Name" = "${local.sdm_node_name}-relay" }, var.tags, )
 }
