@@ -41,11 +41,21 @@ resource "sdm_node" "relay" {
   }
 }
 
+resource "aws_ssm_parameter" "relay" {
+  type  = "SecureString"
+  value = sdm_node.relay.relay.0.token
+  name  = "/strongdm/relay/${sdm_node.relay.relay.0.name}/token"
+
+  overwrite = true
+
+  tags = merge({ "Name" = sdm_node.relay.relay.0.name }, var.tags, )
+}
+
 resource "aws_instance" "relay" {
 
   ami           = data.aws_ami.amazon_linux_2.image_id
   instance_type = local.dev_mode ? "t3.micro" : "t3.medium"
-  user_data     = templatefile("${path.module}/templates/relay_install/relay_install.tftpl", { SDM_TOKEN = "${var.sdm_token}" })
+  user_data     = templatefile("${path.module}/templates/relay_install/relay_install.tftpl", { SDM_TOKEN = "${aws_ssm_parameter.relay.value}" })
 
   key_name = var.ssh_key
 
