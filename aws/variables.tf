@@ -1,10 +1,10 @@
 variable "AWS_ACCESS_KEY_ID" {
-  type = string
+  type    = string
   default = "AWS_ACCESS_KEY_ID"
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
-  type = string
+  type    = string
   default = "AWS_SECRET_ACCESS_KEY"
 }
 
@@ -14,7 +14,7 @@ variable "DATABASE_CONNECTION_URL" {
 }
 
 variable "app_count" {
-  type = number
+  type    = number
   default = 1
 }
 
@@ -61,7 +61,6 @@ variable "database_password" {
 
 variable "docker_image" {
   description = "Docker image url used in ECS task."
-  default     = "mageai/mageai:latest"
 }
 
 variable "ecs_task_cpu" {
