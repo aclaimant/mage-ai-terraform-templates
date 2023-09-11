@@ -17,7 +17,7 @@ variable "gateway_listen_port" {
 variable "tags" {
   default = {
     created_by = "joel@aclaimant.com"
-    stack      = "mage-${var.app_environment}"
+    stack      = "mage"
   }
 }
 
