@@ -1,6 +1,6 @@
 locals {
   sdm_node_name   = "${var.app_name}-${var.app_environment}-sdm"
-  relay_subnet_id = var.private_subnets[0]
+  relay_subnet_id = aws_subnet.private[0].id
 
   dev_mode = true
 }
