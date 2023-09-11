@@ -4,16 +4,6 @@ locals {
 
   dev_mode = true
 }
-locals {
-  security_group_details = {
-    relay = {
-      type        = "relay"
-      name        = "${local.sdm_node_name}-relays"
-      description = "Egress only security group for strongDM relay"
-    }
-  }
-  security_groups = compact([local.create_gateway ? "gateway" : "", local.create_relay ? "relay" : ""])
-}
 
 resource "aws_security_group" "this" {
   name        = "${local.sdm_node_name}-sg"

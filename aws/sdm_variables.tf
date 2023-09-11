@@ -14,6 +14,13 @@ variable "gateway_listen_port" {
   default     = 5000
 }
 
+variable "tags" {
+  default = {
+    created_by = "joel@aclaimant.com"
+    stack      = "mage-${var.app_environment}"
+  }
+}
+
 
 #################
 # Sources latest Amazon Linux 2 AMI ID
