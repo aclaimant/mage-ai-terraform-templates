@@ -11,7 +11,7 @@ resource "aws_security_group" "this" {
 
   vpc_id = aws_vpc.aws-vpc.id
 
-  "ingress" {
+  ingress {
     from_port   = var.gateway_listen_port
     to_port     = var.gateway_listen_port
     protocol    = "tcp"
