@@ -77,7 +77,38 @@ resource "aws_lb_listener" "listener" {
   protocol          = "HTTP"
 
   default_action {
+    type = "redirect"
+
+    redirect {
+      port        = "443"
+      protocol    = "HTTPS"
+      status_code = "HTTP_301"
+    }
+  }
+}
+
+resource "aws_lb_listener" "https_listener" {
+  load_balancer_arn = aws_alb.application_load_balancer.id
+  port              = "443"
+  protocol          = "HTTPS"
+  ssl_policy        = "ELBSecurityPolicy-TLS13-1-2-2021-06"
+  certificate_arn   = "arn:aws:acm:us-east-1:131793033063:certificate/9cadd8e3-79df-4006-83ca-fb3991bdb01c"
+
+
+  default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.target_group.id
   }
+}
+
+data "aws_route53_zone" "zone" {
+  name = "onaclaimant.com"
+}
+
+resource "aws_route53_record" "www" {
+  zone_id = aws_route53_zone.zone.zone_id
+  name    = "${var.app_environment}.data-pipes.onaclaimant.com"
+  type    = "CNAME"
+  ttl     = 60
+  records = [aws_alb.application_load_balancer.dns_name]
 }
