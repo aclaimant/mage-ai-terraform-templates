@@ -62,7 +62,7 @@ resource "aws_instance" "relay" {
   instance_type = local.dev_mode ? "t3.micro" : "t3.medium"
   user_data     = templatefile("${path.module}/templates/relay_install/relay_install.tftpl", { SDM_TOKEN = "${aws_ssm_parameter.relay.value}" })
 
-  user_data_replace_on_change = true
+  # user_data_replace_on_change = true
 
   key_name = var.ssh_key
 
