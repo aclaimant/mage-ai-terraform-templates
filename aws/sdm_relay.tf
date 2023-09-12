@@ -51,6 +51,11 @@ resource "aws_ssm_parameter" "relay" {
   tags = merge({ "Name" = sdm_node.relay.relay.0.name }, var.tags, )
 }
 
+resource "aws_eip" "relay" {
+  instance = aws_instance.relay.id
+  domain   = "vpc"
+}
+
 resource "aws_instance" "relay" {
 
   ami           = data.aws_ami.amazon_linux_2.image_id

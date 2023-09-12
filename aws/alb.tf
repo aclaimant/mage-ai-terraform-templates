@@ -13,26 +13,27 @@ resource "aws_alb" "application_load_balancer" {
   }
 }
 
-data "http" "myip" {
-  url = "http://ipv4.icanhazip.com"
-}
+# data "http" "myip" {
+#   url = "http://ipv4.icanhazip.com"
+# }
 
 resource "aws_security_group" "load_balancer_security_group" {
   vpc_id = aws_vpc.aws-vpc.id
 
   ingress {
-    from_port        = 443
-    to_port          = 443
-    protocol         = "tcp"
-    cidr_blocks      = ["${chomp(data.http.myip.response_body)}/32"]
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["${chomp(aws_eip.relay.public_ip)}/32"]
   }
 
   ingress {
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["${chomp(data.http.myip.response_body)}/32"]
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["${chomp(aws_eip.relay.public_ip)}/32"]
   }
+
 
   egress {
     from_port        = 0
@@ -76,7 +77,7 @@ resource "aws_lb_listener" "listener" {
   protocol          = "HTTP"
 
   default_action {
-     type             = "forward"
-     target_group_arn = aws_lb_target_group.target_group.id
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.target_group.id
   }
 }
