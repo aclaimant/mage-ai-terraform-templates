@@ -53,7 +53,6 @@ resource "aws_ssm_parameter" "relay" {
 
 resource "aws_eip" "relay" {
   instance = aws_instance.relay.id
-  domain   = "vpc"
 }
 
 resource "aws_instance" "relay" {
