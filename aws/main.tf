@@ -163,7 +163,7 @@ resource "aws_security_group" "service_security_group" {
     from_port       = 6789
     to_port         = 6789
     protocol        = "tcp"
-    cidr_blocks     = ["${chomp(data.http.myip.response_body)}/32"]
+    cidr_blocks     = ["${chomp(aws_eip.relay.public_ip)}/32"]
     security_groups = [aws_security_group.load_balancer_security_group.id]
   }
 
