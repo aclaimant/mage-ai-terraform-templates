@@ -101,12 +101,13 @@ resource "aws_lb_listener" "https_listener" {
   }
 }
 
-data "aws_route53_zone" "zone" {
-  name = "onaclaimant.com"
+data "aws_route53_zone" "onaclaimant" {
+  name         = "onaclaimant.com."
+  private_zone = false
 }
 
 resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.zone.zone_id
+  zone_id = aws_route53_zone.onaclaimant.zone_id
   name    = "${var.app_environment}.data-pipes.onaclaimant.com"
   type    = "CNAME"
   ttl     = 60
