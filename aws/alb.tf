@@ -107,7 +107,7 @@ data "aws_route53_zone" "onaclaimant" {
 }
 
 resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.onaclaimant.zone_id
+  zone_id = data.aws_route53_zone.onaclaimant.zone_id
   name    = "${var.app_environment}.data-pipes.onaclaimant.com"
   type    = "CNAME"
   ttl     = 60
