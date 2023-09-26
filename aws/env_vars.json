@@ -34,5 +34,13 @@
     {
         "name": "DISABLE_NOTEBOOK_EDIT_ACCESS",
         "value": "2"
+    },
+    {
+        "name": "ACL_DBT_DB_ENV",
+        "value": "${acl_dbt_db_env}"
+    },
+    {
+        "name": "SNOWFLAKE_ROLE",
+        "value": "${snowflake_role}"
     }
 ]

@@ -87,3 +87,11 @@ variable "availability_zones" {
   description = "List of availability zones"
   default     = ["us-west-2a", "us-west-2b"]
 }
+
+variable "ACL_DBT_DB_ENV" {
+  type = string
+}
+
+variable "SNOWFLAKE_ROLE" {
+  type = string
+}
