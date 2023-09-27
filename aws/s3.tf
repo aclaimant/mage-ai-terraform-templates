@@ -7,9 +7,10 @@ module "bucket_reader_s3_user" {
   source  = "cloudposse/iam-s3-user/aws"
   version = "1.2.0"
 
-  name         = local.reader_user_name
-  s3_actions   = ["s3:GetObject", "s3:ListBucket"]
-  s3_resources = [aws_s3_bucket.data_bucket.arn]
+  name       = local.reader_user_name
+  s3_actions = ["s3:GetObject", "s3:ListBucket"]
+  s3_resources = [aws_s3_bucket.data_bucket.arn,
+  "${aws_s3_bucket.data_bucket.arn}/*"]
 
   tags = {
     Name       = local.reader_user_name
