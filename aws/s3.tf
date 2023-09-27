@@ -5,7 +5,7 @@ locals {
 
 module "bucket_reader_s3_user" {
   source  = "cloudposse/iam-s3-user/aws"
-  version = "1.2.2"
+  version = "1.2.0"
 
   name         = local.reader_user_name
   s3_actions   = ["s3:GetObject", "s3:ListBucket"]
