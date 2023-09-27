@@ -9,7 +9,7 @@ module "bucket_reader_s3_user" {
 
   name         = local.reader_user_name
   s3_actions   = ["s3:GetObject", "s3:ListBucket"]
-  s3_resources = aws_s3_bucket.data_bucket.arn
+  s3_resources = [aws_s3_bucket.data_bucket.arn]
 
   tags = {
     Name       = local.reader_user_name
