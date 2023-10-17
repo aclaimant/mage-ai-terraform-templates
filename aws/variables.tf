@@ -95,3 +95,7 @@ variable "ACL_DBT_DB_ENV" {
 variable "SNOWFLAKE_ROLE" {
   type = string
 }
+
+variable "MAGE_PUBLIC_HOST" {
+  type = string
+}
