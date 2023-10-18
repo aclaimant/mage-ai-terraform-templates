@@ -60,7 +60,7 @@ data "template_file" "env_vars" {
 }
 
 resource "aws_ecs_task_definition" "aws-ecs-task" {
-  family = "${var.app_name}-task"
+  family = "${var.app_name}-${var.app_environment}-task"
 
   container_definitions = <<DEFINITION
   [
