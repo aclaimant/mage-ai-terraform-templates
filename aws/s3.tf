@@ -21,6 +21,11 @@ module "bucket_reader_s3_user" {
   }
 }
 
+resource "aws_iam_user_policy_attachment" "s3_reader_policy_attachment-secrets" {
+  user       = module.bucket_reader_s3_user.user_name
+  policy_arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
+}
+
 resource "aws_s3_bucket" "data_bucket" {
   bucket        = local.bucket_name
   force_destroy = "false"
