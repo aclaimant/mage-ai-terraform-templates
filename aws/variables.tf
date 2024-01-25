@@ -96,6 +96,10 @@ variable "SNOWFLAKE_ROLE" {
   type = string
 }
 
+variable "SNOWFLAKE_WAREHOUSE" {
+  type = string
+}
+
 variable "MAGE_PUBLIC_HOST" {
   type = string
 }

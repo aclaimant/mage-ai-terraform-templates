@@ -44,6 +44,10 @@
         "value": "${snowflake_role}"
     },
     {
+        "name": "SNOWFLAKE_WAREHOUSE",
+        "value": "${snowflake_warehouse}"
+    },
+    {
         "name": "MAGE_PUBLIC_HOST",
         "value": "${mage_public_host}"
     }

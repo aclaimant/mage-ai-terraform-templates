@@ -55,6 +55,7 @@ data "template_file" "env_vars" {
     ec2_subnet_id           = aws_subnet.public[0].id
     acl_dbt_db_env          = var.ACL_DBT_DB_ENV
     snowflake_role          = var.SNOWFLAKE_ROLE
+    snowflake_warehouse     = var.SNOWFLAKE_WAREHOUSE
     mage_public_host        = var.MAGE_PUBLIC_HOST
   }
 }
