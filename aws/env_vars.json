@@ -40,6 +40,10 @@
         "value": "${acl_dbt_db_env}"
     },
     {
+        "name": "SNOWFLAKE_DATABASE",
+        "value": "${snowflake_database}"
+    },
+    {
         "name": "SNOWFLAKE_ROLE",
         "value": "${snowflake_role}"
     },

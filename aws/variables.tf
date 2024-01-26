@@ -92,6 +92,10 @@ variable "ACL_DBT_DB_ENV" {
   type = string
 }
 
+variable "SNOWFLAKE_DATABASE" {
+  type = string
+}
+
 variable "SNOWFLAKE_ROLE" {
   type = string
 }
