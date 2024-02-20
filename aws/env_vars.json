@@ -54,9 +54,5 @@
     {
         "name": "MAGE_PUBLIC_HOST",
         "value": "${mage_public_host}"
-    },
-    {
-        "name": "DEFAULT_EXECUTOR_TYPE",
-        "value": "ecs"
     }
 ]
