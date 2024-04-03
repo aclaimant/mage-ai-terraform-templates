@@ -58,6 +58,11 @@ data "template_file" "env_vars" {
     snowflake_role          = var.SNOWFLAKE_ROLE
     snowflake_warehouse     = var.SNOWFLAKE_WAREHOUSE
     mage_public_host        = var.MAGE_PUBLIC_HOST
+    postgres_dbname         = var.POSTGRES_DBNAME
+    postgres_user           = var.POSTGRES_USER
+    postgres_password       = var.POSTGRES_PASSWORD
+    postgres_host           = var.POSTGRES_HOST
+    postgres_port           = var.POSTGRES_PORT
   }
 }
 

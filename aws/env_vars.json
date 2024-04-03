@@ -54,5 +54,25 @@
     {
         "name": "MAGE_PUBLIC_HOST",
         "value": "${mage_public_host}"
+    },
+    {
+        "name": "POSTGRES_DBNAME",
+        "value": "aclaimant"
+    },
+    {
+        "name": "POSTGRES_USER",
+        "value": "svc_user"
+    },
+    {
+        "name": "POSTGRES_PASSWORD",
+        "value": ""
+    },
+    {
+        "name": "POSTGRES_HOST",
+        "value": "localhost"
+    },
+    {
+        "name": "POSTGRES_PORT",
+        "value": "${postgres_port}"
     }
 ]

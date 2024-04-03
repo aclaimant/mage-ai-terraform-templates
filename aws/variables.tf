@@ -107,3 +107,24 @@ variable "SNOWFLAKE_WAREHOUSE" {
 variable "MAGE_PUBLIC_HOST" {
   type = string
 }
+
+variable "POSTGRES_DBNAME" {
+  type = string
+}
+
+variable "POSTGRES_USER" {
+  type = string
+}
+
+variable "POSTGRES_PASSWORD" {
+  type = string
+}
+
+variable "POSTGRES_HOST" {
+  type = string
+}
+
+variable POSTGRES_PORT {
+  type = number
+}
+
