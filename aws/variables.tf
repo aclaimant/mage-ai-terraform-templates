@@ -112,3 +112,7 @@ variable "POSTGRES_PORT" {
   type = number
 }
 
+variable "SDM_ADMIN_TOKEN" {
+  type = string
+}
+

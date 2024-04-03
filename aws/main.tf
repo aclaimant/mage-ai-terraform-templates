@@ -59,6 +59,7 @@ data "template_file" "env_vars" {
     snowflake_warehouse     = var.SNOWFLAKE_WAREHOUSE
     mage_public_host        = var.MAGE_PUBLIC_HOST
     postgres_port           = var.POSTGRES_PORT
+    sdm_admin_token         = var.SDM_ADMIN_TOKEN
   }
 }
 
