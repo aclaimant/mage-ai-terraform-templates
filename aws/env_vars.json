@@ -74,5 +74,9 @@
     {
         "name": "POSTGRES_PORT",
         "value": "${postgres_port}"
+    },
+    {
+        "name": "SDM_ADMIN_TOKEN",
+        "value": "${sdm_admin_token}"
     }
 ]
