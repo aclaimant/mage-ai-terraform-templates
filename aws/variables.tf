@@ -119,6 +119,6 @@ variable "SDM_ADMIN_TOKEN" {
 variable "DISABLE_NOTEBOOK_EDIT_ACCESS" {
   type        = string
   description = "See https://docs.mage.ai/production/configuring-production-settings/overview#read-only-access"
-  defualt     = "2"
+  default     = "2"
 }
 
