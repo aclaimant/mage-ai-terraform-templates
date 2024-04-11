@@ -33,7 +33,7 @@
     },
     {
         "name": "DISABLE_NOTEBOOK_EDIT_ACCESS",
-        "value": "2"
+        "value": "${disable_notebook_edit_access}"
     },
     {
         "name": "ACL_DBT_DB_ENV",

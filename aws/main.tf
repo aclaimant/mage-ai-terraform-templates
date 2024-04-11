@@ -51,15 +51,16 @@ data "template_file" "env_vars" {
     aws_region_name       = var.aws_region
     # lambda_func_arn = "${aws_lambda_function.terraform_lambda_func.arn}"
     # lambda_func_name = "${aws_lambda_function.terraform_lambda_func.function_name}"
-    database_connection_url = "postgresql+psycopg2://${var.database_user}:${var.database_password}@${aws_db_instance.rds.address}:5432/mage"
-    ec2_subnet_id           = aws_subnet.public[0].id
-    acl_dbt_db_env          = var.ACL_DBT_DB_ENV
-    snowflake_database      = var.SNOWFLAKE_DATABASE
-    snowflake_role          = var.SNOWFLAKE_ROLE
-    snowflake_warehouse     = var.SNOWFLAKE_WAREHOUSE
-    mage_public_host        = var.MAGE_PUBLIC_HOST
-    postgres_port           = var.POSTGRES_PORT
-    sdm_admin_token         = var.SDM_ADMIN_TOKEN
+    database_connection_url      = "postgresql+psycopg2://${var.database_user}:${var.database_password}@${aws_db_instance.rds.address}:5432/mage"
+    ec2_subnet_id                = aws_subnet.public[0].id
+    acl_dbt_db_env               = var.ACL_DBT_DB_ENV
+    snowflake_database           = var.SNOWFLAKE_DATABASE
+    snowflake_role               = var.SNOWFLAKE_ROLE
+    snowflake_warehouse          = var.SNOWFLAKE_WAREHOUSE
+    mage_public_host             = var.MAGE_PUBLIC_HOST
+    postgres_port                = var.POSTGRES_PORT
+    sdm_admin_token              = var.SDM_ADMIN_TOKEN
+    disable_notebook_edit_access = var.DISABLE_NOTEBOOK_EDIT_ACCESS
   }
 }
 
