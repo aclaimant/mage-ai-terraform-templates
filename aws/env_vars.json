@@ -78,5 +78,21 @@
     {
         "name": "SDM_ADMIN_TOKEN",
         "value": "${sdm_admin_token}"
+    },
+    {
+        "name": "KINDE_DIPDASH_CLIENT_ID",
+        "value": "${kinde_dipdash_client_id}"
+    },
+    {
+        "name": "KINDE_DIPDASH_CLIENT_SECRET",
+        "value": "${kinde_dipdash_client_secret}"
+    },
+    {
+        "name": "KINDE_DIPDASH_DOMAIN",
+        "value": "${kinde_dipdash_domain}"
+    },
+    {
+        "name": "DIPDASH_URL",
+        "value": "${dipdash_url}"
     }
 ]
