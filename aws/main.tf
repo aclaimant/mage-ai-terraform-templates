@@ -61,6 +61,10 @@ data "template_file" "env_vars" {
     postgres_port                = var.POSTGRES_PORT
     sdm_admin_token              = var.SDM_ADMIN_TOKEN
     disable_notebook_edit_access = var.DISABLE_NOTEBOOK_EDIT_ACCESS
+    kinde_dipdash_client_id      = var.KINDE_DIPDASH_CLIENT_ID
+    kinde_dipdash_client_secret  = var.KINDE_DIPDASH_CLIENT_SECRET
+    kinde_dipdash_domain         = var.KINDE_DIPDASH_DOMAIN
+    dipdash_url                  = var.DIPDASH_URL
   }
 }
 

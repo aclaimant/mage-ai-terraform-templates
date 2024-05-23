@@ -122,3 +122,22 @@ variable "DISABLE_NOTEBOOK_EDIT_ACCESS" {
   default     = "2"
 }
 
+variable "KINDE_DIPDASH_CLIENT_ID" {
+  type = string
+  description = "Client ID to pass to authenticator for dip-dash API tokens"
+}
+
+variable "KINDE_DIPDASH_CLIENT_SECRET" {
+  type = string
+  description = "Client secret to pass to authenticator for dip-dash API tokens"
+}
+
+variable "KINDE_DIPDASH_DOMAIN" {
+  type = string
+  description = "Base URL for Kinde authenticator API, used for dip-dash access"
+}
+
+variable "DIPDASH_URL" {
+  type = string
+  description = "Base URL for dip-dash API"
+}
