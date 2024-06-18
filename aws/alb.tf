@@ -34,6 +34,14 @@ resource "aws_security_group" "load_balancer_security_group" {
     cidr_blocks = ["${chomp(aws_eip.relay.public_ip)}/32"]
   }
 
+  ingress {
+    from_port = 443
+    to_port   = 443
+    protocol  = "tcp"
+    # security_groups = [aws_default_security_group.default.id]
+    security_groups = [data.aws_security_group.default.id]
+  }
+
 
   egress {
     from_port        = 0
