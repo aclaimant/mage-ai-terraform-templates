@@ -30,7 +30,5 @@ resource "aws_vpc" "aws-vpc" {
 
 data "aws_security_group" "default" {
   name   = "default"
-  vpc_id = aws_vpc.awc-vpc.id
-
-  depends_on = [aws_vpc.awc-vpc]
+  vpc_id = aws_vpc.aws-vpc.id
 }
